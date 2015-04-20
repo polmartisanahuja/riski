@@ -43,11 +43,11 @@ sudo sed -i -e 's/USER=debian-transmission/USER=root/g' /etc/init.d/transmission
 #Configure Static IP
 ifconfig
 netstat -nr
-read -p "Type a private IP address for your RPi:" address
-read -p "Copy the Mask value:" mask
-read -p "Copy the Destination value:" destination
-read -p "Copy the Bcast value:" bcast
-read -p "Copy the Gateway value:" gateway
+read -p "Type a private IP address for your RPi (e.g. 192.168.1.12):" address
+read -p "Copy the Mask value (e.g. 255.255.255.0):" mask
+read -p "Copy the Destination value (e.g. 192.168.1.0):" destination
+read -p "Copy the Bcast value (e.g. 192.168.1.255):" bcast
+read -p "Copy the Gateway value (e.g. 192.168.1.1):" gateway
 echo "auto lo
 
 iface lo inet loopback
@@ -94,11 +94,11 @@ rm mycron
 sudo service cron start
 
 #Set MEDIABOX
-read -p "Do you want to set Mediabox? (yes/no)" A
+read -p "Do you want to set Mediabox? (yes/no):" A
 if [ "$A" = "yes" ]
 then
 	sudo fdisk -l
-	read -p "Type the name of the USB HDD device (e.g. sda1,...) that you want to convert in Mediabox:" device 
+	read -p "Type the name of the USB HDD device (e.g. sda1) that you want to convert in Mediabox:" device 
 	sudo umount /dev/$device
 	sudo mkfs.ext4 /dev/$device -L MEDIABOX
 	sudo mkdir /media/MEDIABOX 
