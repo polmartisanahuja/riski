@@ -43,11 +43,11 @@ sudo sed -i -e 's/USER=debian-transmission/USER=root/g' /etc/init.d/transmission
 #Configure Static IP
 ifconfig
 netstat -nr
-read -p "Type your chosen private IP address for the pMbox:" address
-read -p "Type the Mask value:" mask
-read -p "Type the Destination value:" destination
-read -p "Type the Bcast value:" bcast
-read -p "Type the Gateway value:" gateway
+read -p "Type a private IP address for your RPi:" address
+read -p "Copy the Mask value:" mask
+read -p "Copy the Destination value:" destination
+read -p "Copy the Bcast value:" bcast
+read -p "Copy the Gateway value:" gateway
 echo "auto lo
 
 iface lo inet loopback
@@ -62,7 +62,6 @@ allow-hotplug wlan0
 iface wlan0 inet manual
 wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
 iface default inet dhcp" | sudo tee /etc/network/interfaces
-
 
 #Install Filebot
 wget http://sourceforge.net/projects/filebot/files/filebot/FileBot_4.5.6/filebot_4.5.6_arm.ipk/download
@@ -85,7 +84,7 @@ filebot -script fn:configure
 
 #Set DUCKDNS
 mkdir /home/pi/duckdns 
-read -p "Type your duckdns domain (without quotes):" url
+read -p "Type your Duckdns domain URL (without quotes):" url
 echo "echo url=\"$url\" | curl -k -o ~/duckdns/duck.log -K -"  > /home/pi/duckdns/duck.sh
 chmod 700 /home/pi/duckdns/duck.sh
 crontab -l > mycron
@@ -99,7 +98,7 @@ read -p "Do you want to set Mediabox? (yes/no)" A
 if [ "$A" = "yes" ]
 then
 	sudo fdisk -l
-	read -p "Type the name (e.g. sda1,...) of the device that will become Mediabox:" device 
+	read -p "Type the name of the USB HDD device (e.g. sda1,...) that you want to convert in Mediabox:" device 
 	sudo umount /dev/$device
 	sudo mkfs.ext4 /dev/$device -L MEDIABOX
 	sudo mkdir /media/MEDIABOX 
