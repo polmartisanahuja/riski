@@ -76,7 +76,7 @@ sudo ln -s /usr/share/filebot/bin/filebot.sh /usr/bin/filebot
 echo "#!/bin/sh
 java -Dunixfs=false -DuseExtendedFileAttributes=false -Dfile.encoding=UTF-8 -Dsun.net.client.defaultConnectTimeout=10000 -Dsun.net.client.defaultReadTimeout=60000 -Dapplication.deployment=ipkg -Dapplication.analytics=true -Duser.home=/usr/share/filebot/data -Dapplication.dir=/usr/share/filebot/data -Djava.io.tmpdir=/usr/share/filebot/data/temp -Djna.library.path=/usr/share/filebot -Djava.library.path=/usr/share/filebot -Dnet.sourceforge.filebot.AcoustID.fpcalc=fpcalc -jar -Xmx400M /usr/share/filebot/FileBot.jar \"\$@\"" | sudo tee /usr/share/filebot/bin/filebot.sh 
 echo "#!/bin/bash
-filebot -script fn:amc --output \"/media/MEDIABOX/media/\" --log-file amc.log --action move --conflict override -non-strict --def music=y clean=y subtitles=en,es xbmc="$address" artwork=y \"ut_dir=\$TR_TORRENT_DIR/\$TR_TORRENT_NAME\" \"ut_kind=multi\" \"ut_title=\$TR_TORRENT_NAME\"" | sudo tee /home/pi/transmission-postprocess.sh
+filebot -script fn:amc --output \"/media/MEDIABOX/media/\" --log-file amc.log --action move --conflict override -non-strict --def music=y clean=y subtitles=en,es xbmc="$address" artwork=y \"ut_dir=\$TR_TORRENT_DIR/\$TR_TORRENT_NAME\" \"ut_kind=multi\" \"ut_title=\$TR_TORRENT_NAME\" \"exec=chmod 777 -R '/media/MEDIABOX'\"" | sudo tee /home/pi/transmission-postprocess.sh
 sudo chmod -R a+wrx /usr/share/filebot/
 sudo chmod a+wrx /home/pi/transmission-postprocess.sh
 cd
