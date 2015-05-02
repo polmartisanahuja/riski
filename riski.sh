@@ -53,7 +53,7 @@ echo "auto lo
 iface lo inet loopback
 iface eth0 inet static
 address $address
-netmaks $mask
+netmask $mask
 network $destination
 broadcast $bcast
 gateway $gateway
