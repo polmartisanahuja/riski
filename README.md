@@ -1,5 +1,19 @@
-# Riski
-Torrent based Automated Media Center with Raspberry Pi (RPi)
+# riski
+Torrent based Automated Media Center for Raspberry Pi (RPi)
+
+### What is *riski*?
+*riski* is a Torrent based Automated Media Center for the Raspberry Pi (RPi) computer board. By *Torrent based*, we mean that most of media content is remotely downloaded by using a torrent client (e.g. *Transmission*) and, by *Automated*, we mean that once the media file is completely download, it is indexed, stored and elegantly presented on a Media Center enviroment (e.g. *Kodi*) in a fully automatical way. 
+
+In other words, *riski* allow us to download any media file (movies, tv shows and music) into our RPi by sending the order remotely through our smartphone wherever we are, and directly playback it on our TV once we arrive at home. It also allow to subscribe in any TV Show RSS stream (e.g. *ShowRSS*) and automatically recieve each new episode of a TV Show that we are following. *riski* will notify us that a new episode has arrived. 
+
+Moreover, *riski* will look for the subtitles that better fit to our media file according to out lenguage preferences and will display them automatically.
+
+### Hardware setup
+Raspberry Pi (RPi) has been chosen as the hardware where to set up *riski* becouse of it low power consumtion. Since it is desirable that RPi will be all day turned on waiting us to download something remotely, it is important that the system consumes little power. 
+
+An external Hard Drive Drive (HDD) connected via USB will also be needed in order to store all the media content that we will be downloading. It is recommended using an external powered HDD, since, in return, the low RPi consumtion has the disadvantage that can not feed big external periferical devices. 
+
+Other hardware components needed are: a SD card (standard or micro depending on the RPi version) where to set up the Operating System (OS), an HDMI cable to connect RPi to TV, Ethernet cable to connect RPi to Router, a 5V micro USB charger to feed RPi (any standard smartphone charger should work) and an external USB keyboard for the installation. 
 
 ### Installation
 1. Install the Raspbian OS image into a SD card by following https://www.raspberrypi.org/documentation/installation/installing-images/README.md
