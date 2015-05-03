@@ -2,16 +2,16 @@
 Torrent based Automated Media Center for Raspberry Pi (RPi)
 
 ### What is *riski*?
-*riski* is a Torrent based Automated Media Center for the Raspberry Pi (RPi) computer board. By *Torrent based*, we mean that most of media content is remotely downloaded by using a torrent client (e.g. *Transmission*) and, by *Automated*, we mean that once the media file is completely download, it is indexed, stored and elegantly presented on a Media Center enviroment (e.g. *Kodi*) in a fully automatical way. 
+*riski* is a Torrent based Automated Media Center for the Raspberry Pi (RPi) computer board. By *Torrent based*, we mean that most of media content is remotely downloaded by using a torrent client (e.g. *Transmission*) and, by *Automated*, we mean that once the media file is completely download, it is indexed, stored and elegantly presented on a Media Center environment (e.g. *Kodi*) in a fully automatically way. 
 
-In other words, *riski* allow us to download any media file (movies, tv shows and music) into our RPi by sending the order remotely through our smartphone wherever we are, and directly playback it on our TV once we arrive at home. It also allow to subscribe in any TV Show RSS stream (e.g. *ShowRSS*) and automatically recieve each new episode of a TV Show that we are following. *riski* will notify us that a new episode has arrived. 
+In other words, *riski* allow us to download any media file (movies, tv shows and music) into our RPi by sending the order remotely through our smartphone wherever we are, and directly playback it on our TV once we arrive at home. It also allow to subscribe in any TV Show RSS stream (e.g. *ShowRSS*) and automatically receive each new episode of a TV Show that we are following. *riski* will notify us that a new episode has arrived. 
 
-Moreover, *riski* will look for the subtitles that better fit to our media file according to our lenguage preferences and will display them automatically.
+Moreover, *riski* will look for the subtitles that better fit to our media file according to our language preferences and will display them automatically.
 
 ### Hardware setup
-Raspberry Pi (RPi) has been chosen as the hardware where to set up *riski* becouse of it low power consumption. Since it is desirable that RPi will be all day turned on waiting us to download something remotely, it is important that the system consumes little power. 
+Raspberry Pi (RPi) has been chosen as the hardware where to set up *riski* because of it low power consumption. Since it is desirable that RPi will be all day turned on waiting us to download something remotely, it is important that the system consumes little power. 
 
-An external Hard Drive Drive (HDD) connected via USB will also be needed in order to store all the media content that we will be downloading. It is recommended using an external powered HDD, since, in return, the low RPi consumtion has the disadvantage that can not feed big external periferical devices. 
+An external Hard Drive Drive (HDD) connected via USB will also be needed in order to store all the media content that we will be downloading. It is recommended using an external powered HDD, since, in return, the low RPi consumption has the disadvantage that can not feed big external peripheral devices. 
 
 Other hardware components needed are: a SD card (standard or micro depending on the RPi version) where to set up the Operating System (OS), an HDMI cable to connect RPi to TV, Ethernet cable to connect RPi to Router, a 5V micro USB charger to feed RPi (any standard smartphone charger should work) and an external USB keyboard for the installation. 
 
@@ -24,10 +24,10 @@ Other hardware components needed are: a SD card (standard or micro depending on 
 
 3. Register in http://www.opensubtitles.org/
 
-4. Plug the flashed SD card in step 1 into the RPi card slot. Connect an external USB  self-powered HDD to your Raspberry Pi (Important!!! Data inside will be erased). Additionally, plug the ethernet wire, connect an external USB keyboard to the RPi and plug the RPi into a 5V micro USB power source, your RPi will boot for the first time and a configuration menu will pop-up. 
+4. Plug the flashed SD card in step 1 into the RPi card slot. Connect an external USB  self-powered HDD to your Raspberry Pi (Important!!! Data inside will be erased). Additionally, plug the Ethernet wire, connect an external USB keyboard to the RPi and plug the RPi into a 5V micro USB power source, your RPi will boot for the first time and a configuration menu will pop-up. 
     
  By navigating throughout the Raspi-config menu with your keyboard, 
-    - expand the Filesystem  
+    - expand the File system  
     - change Time Zone 
     - change Keyboard Layout
     - change Locale
@@ -62,6 +62,3 @@ Other hardware components needed are: a SD card (standard or micro depending on 
  * Add torrents for download by typing http://RPi.private.IP.XX:9091/transmission/web/ on any browser connected into your private network (User Name: transmission Password: transmission). If you want to do the same out of your network you just need to type your Duckdns DNS instead of RPi.private.IP.XX on the same URL (not that this will not work if you are in your private network)
  * You can also search and add torrents remotely with your Android Smartphone by using the **Trandroid**. Download and configure it by following http://www.transdroid.org/download/.
  * You can remotely control Kodi with your smartphone with the oficial Kodi remote control called **Kore**. Download it for Android here https://play.google.com/store/apps/details?id=org.xbmc.kore 
-
-
-
