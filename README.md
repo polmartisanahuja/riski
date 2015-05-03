@@ -6,7 +6,7 @@ Torrent based Automated Media Center for Raspberry Pi (RPi)
 
 In other words, *riski* allow us to download any media file (movies, tv shows and music) into our RPi by sending the order remotely through our smartphone wherever we are, and directly playback it on our TV once we arrive at home. It also allow to subscribe in any TV Show RSS stream (e.g. *ShowRSS*) and automatically recieve each new episode of a TV Show that we are following. *riski* will notify us that a new episode has arrived. 
 
-Moreover, *riski* will look for the subtitles that better fit to our media file according to out lenguage preferences and will display them automatically.
+Moreover, *riski* will look for the subtitles that better fit to our media file according to our lenguage preferences and will display them automatically.
 
 ### Hardware setup
 Raspberry Pi (RPi) has been chosen as the hardware where to set up *riski* becouse of it low power consumtion. Since it is desirable that RPi will be all day turned on waiting us to download something remotely, it is important that the system consumes little power. 
