@@ -9,7 +9,7 @@ In other words, *riski* allow us to download any media file (movies, tv shows an
 Moreover, *riski* will look for the subtitles that better fit to our media file according to our lenguage preferences and will display them automatically.
 
 ### Hardware setup
-Raspberry Pi (RPi) has been chosen as the hardware where to set up *riski* becouse of it low power consumtion. Since it is desirable that RPi will be all day turned on waiting us to download something remotely, it is important that the system consumes little power. 
+Raspberry Pi (RPi) has been chosen as the hardware where to set up *riski* becouse of it low power consumption. Since it is desirable that RPi will be all day turned on waiting us to download something remotely, it is important that the system consumes little power. 
 
 An external Hard Drive Drive (HDD) connected via USB will also be needed in order to store all the media content that we will be downloading. It is recommended using an external powered HDD, since, in return, the low RPi consumtion has the disadvantage that can not feed big external periferical devices. 
 
