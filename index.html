@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>riski by polstein</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>riski</h1>
+        <p>Torrent based Automated Media Center with Raspberry Pi</p>
+
+        <p class="view"><a href="https://github.com/polstein/riski">View the Project on GitHub <small>polstein/riski</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/polstein/riski/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/polstein/riski/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/polstein/riski">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="riski" class="anchor" href="#riski" aria-hidden="true"><span class="octicon octicon-link"></span></a>riski</h1>
+
+<p>Torrent based Automated Media Center for Raspberry Pi (RPi)</p>
+
+<p><img src="https://raw.githubusercontent.com/polstein/riski/master/riski.jpg" alt="riski"></p>
+
+<h3>
+<a id="what-is-riski" class="anchor" href="#what-is-riski" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is <em>riski</em>?</h3>
+
+<p><em>riski</em> is a Torrent based Automated Media Center for the Raspberry Pi (RPi) computer board. By <em>Torrent based</em>, we mean that most of media content is remotely downloaded by using a torrent client (e.g. <em>Transmission</em>) and, by <em>Automated</em>, we mean that once the media file is completely download, it is indexed, stored and elegantly presented on a Media Center environment (e.g. <em>Kodi</em>) in a fully automatically way. </p>
+
+<p>In other words, <em>riski</em> allow us to download any media file (movies, tv shows and music) into our RPi by sending the order remotely through our smartphone wherever we are, and directly playback it on our TV once we arrive at home. It also allow to subscribe in any TV Show RSS stream (e.g. <em>ShowRSS</em>) and automatically receive each new episode of a TV Show that we are following. <em>riski</em> will notify us that a new episode has arrived. </p>
+
+<p>Moreover, <em>riski</em> will look for the subtitles that better fit to our media file according to our language preferences and will display them automatically.</p>
+
+<h3>
+<a id="hardware-setup" class="anchor" href="#hardware-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hardware setup</h3>
+
+<p>Raspberry Pi (RPi) has been chosen as the hardware where to set up <em>riski</em> because of it low power consumption. Since it is desirable that RPi will be all day turned on waiting us to download something remotely, it is important that the system consumes little power. </p>
+
+<p>An external Hard Drive Drive (HDD) connected via USB will also be needed in order to store all the media content that we will be downloading. It is recommended using an external powered HDD, since, in return, the low RPi consumption has the disadvantage that can not feed big external peripheral devices. </p>
+
+<p>Other hardware components needed are: a SD card (standard or micro depending on the RPi version) where to set up the Operating System (OS), an HDMI cable to connect RPi to TV, Ethernet cable to connect RPi to Router, a 5V micro USB charger to feed RPi (any standard smartphone charger should work) and an external USB keyboard for the installation. </p>
+
+<h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h3>
+
+<ol>
+<li><p>Install the Raspbian OS image into a SD card by following <a href="https://www.raspberrypi.org/documentation/installation/installing-images/README.md">https://www.raspberrypi.org/documentation/installation/installing-images/README.md</a></p></li>
+<li>
+<p>Create a personal DNS  (e.g. mydns.duckdns.org) throughout <a href="http://duckdns.org/">http://duckdns.org/</a> </p>
+
+<p>Keep save the provided URL in section install&gt;pi (e.g <a href="https://www.duckdns.org/update?domains=yourdomain&amp;token=XXXdbXXe-cXcX-XXXX-bXXc-bXbXXaXfXfbX&amp;ip=">https://www.duckdns.org/update?domains=yourdomain&amp;token=XXXdbXXe-cXcX-XXXX-bXXc-bXbXXaXfXfbX&amp;ip=</a>). You will need it in step 4.</p>
+</li>
+<li><p>Register in <a href="http://www.opensubtitles.org/">http://www.opensubtitles.org/</a></p></li>
+<li>
+<p>Plug the flashed SD card in step 1 into the RPi card slot. Connect an external USB  self-powered HDD to your Raspberry Pi (Important!!! Data inside will be erased). Additionally, plug the Ethernet wire, connect an external USB keyboard to the RPi and plug the RPi into a 5V micro USB power source, your RPi will boot for the first time and a configuration menu will pop-up. </p>
+
+<p>By navigating throughout the Raspi-config menu with your keyboard, </p>
+
+<ul>
+<li>expand the File system<br>
+</li>
+<li>change Time Zone </li>
+<li>change Keyboard Layout</li>
+<li>change Locale</li>
+</ul>
+
+<p>By pressing Finish&gt;Yes, the RPi will reboot. </p>
+</li>
+<li>
+<p>A login prompt will appear. Type: </p>
+
+<ul>
+<li>raspberry login: pi</li>
+<li>Password: raspberry </li>
+</ul>
+
+<p>Once the command line prompt $ appears, type:</p>
+
+<div class="highlight highlight-sh"><pre>  $ git clone https://github.com/polstein/riski
+  $ sh riski/riski.sh</pre></div>
+
+<p>*Alternatively, step 5 can be done remotely using a shh client such as putty in Windows or Terminal in Mac Os or Linux. For example, in Terminal, just type <em>ssh pi@RPi_private_ip</em> (<em>RPi_private_ip</em> is shown in the <em>address</em> field when typing <em>ifconfig</em> on the RPi prompt) and then, introduce the same password and commands on the code-box above. The advantage of this procedure is that you can copy paste some long input parameters using cursor.</p>
+
+<p>The Riski installation will start and some input parameters must be provided during the installation:</p>
+
+<ul>
+<li>Type a private IP address for your RPi. The three first numbers separated by dots must be exactly the same as the ones displayed in the eth&gt;inet addr field, the last one can be substituted by convenience for an unused IP, as for example 12 (e.g. 192.168.1.12)</li>
+<li>Copy the Mask, Destination, Bcast and Gateway values as they are displayed (e.g. Mask:255.255.255.0 Destination:192.168.1.0 Bcast:192.168.1.255 Gateway:192.168.1.1)</li>
+<li>Enter OpenSubtitles username and password of step 3</li>
+<li>Type your Duckdns domain URL of step 2 (make sure that you didn't mistype anything)</li>
+<li>At this point you can chose to set the connected HDD or not. If the HDD is already set from a previous instalation just skip this step by writting no, otherwise type yes.</li>
+<li>Type the name of the USB HDD device that you want to setup as it appears (/dev/device) below the second Device Boot line (e.g. sda1)</li>
+</ul>
+
+<p>RPi will reboot, but now it will do on the Kodi (<a href="http://kodi.tv/">http://kodi.tv/</a>) media center.</p>
+</li>
+<li><p>With the keyboard, navigate to VIDEOS&gt;Files. Then also navigate to Files&gt;MEDIABOX&gt;media&gt;Movies and press c. Navigate to Set content and press Intro. Set that this directory contains Movies and press OK&gt;Yes. Do the same with TV Shows.</p></li>
+<li>Navigate to SYSTEM&gt;Settings&gt;Services&gt;Webserver and mark "Allow control of Kodi via HTTP". Then navigate to Remote control in the left-side menu and mark "Allow programs on other systems to control Kodi". Esc to the Main menu.</li>
+<li>Unplug and plug the RPi to reboot the system. Congratulations!!! Your Riski is already set up! Enjoy it and may torrents be with you ;)</li>
+</ol>
+
+<h3>
+<a id="additionally" class="anchor" href="#additionally" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additionally</h3>
+
+<ul>
+<li>Open port 9091 for your RPi private IP throghout your Router NAT configuration in order to control Transmission (<a href="http://www.transmissionbt.com/">http://www.transmissionbt.com/</a>) remotely out of your private network.</li>
+<li>Add torrents for download by typing <a href="http://RPi.private.IP.XX:9091/transmission/web/">http://RPi.private.IP.XX:9091/transmission/web/</a> on any browser connected into your private network (User Name: transmission Password: transmission). If you want to do the same out of your network you just need to type your Duckdns DNS instead of RPi.private.IP.XX on the same URL (not that this will not work if you are in your private network)</li>
+<li>You can also search and add torrents remotely with your Android Smartphone by using the <strong>Trandroid</strong>. Download and configure it by following <a href="http://www.transdroid.org/download/">http://www.transdroid.org/download/</a>.</li>
+<li>You can remotely control Kodi with your smartphone with the oficial Kodi remote control called <strong>Kore</strong>. Download it for Android here <a href="https://play.google.com/store/apps/details?id=org.xbmc.kore">https://play.google.com/store/apps/details?id=org.xbmc.kore</a> </li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/polstein">polstein</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
