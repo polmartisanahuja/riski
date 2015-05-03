@@ -1,6 +1,8 @@
 # riski
 Torrent based Automated Media Center for Raspberry Pi (RPi)
 
+![alt tag](https://raw.githubusercontent.com/polstein/riski/gh-pages/images/IMG_20150317_195857.jpg)
+
 ### What is *riski*?
 *riski* is a Torrent based Automated Media Center for the Raspberry Pi (RPi) computer board. By *Torrent based*, we mean that most of media content is remotely downloaded by using a torrent client (e.g. *Transmission*) and, by *Automated*, we mean that once the media file is completely download, it is indexed, stored and elegantly presented on a Media Center environment (e.g. *Kodi*) in a fully automatically way. 
 
