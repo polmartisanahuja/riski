@@ -22,7 +22,7 @@ sudo usermod -a -G video pi
 sudo usermod -a -G dialout pi
 sudo usermod -a -G plugdev pi
 sudo usermod -a -G tty pi
-echo "gpu_mem=128" | sudo tee --append /boot/config.txt
+echo "gpu_mem=256" | sudo tee --append /boot/config.txt
 sudo sed -i -e 's/ENABLED=0/ENABLED=1/g' -e 's/USER=kodi/USER=pi/g'  /etc/default/kodi 
 
 #Install Transmission
