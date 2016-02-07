@@ -64,12 +64,12 @@ wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
 iface default inet dhcp" | sudo tee /etc/network/interfaces
 
 #Install Filebot
-wget http://sourceforge.net/projects/filebot/files/filebot/FileBot_4.5.6/filebot_4.5.6_arm.ipk/download
-mv download filebot_4.5.6_arm.ipk
+wget http://sourceforge.net/projects/filebot/files/filebot/FileBot_4.6.1/filebot_4.6.1_noarch.ipk/download 
+mv download filebot_4.6.1_noarch.ipk
 sudo mkdir /tmp/filebot
-sudo mv filebot_4.5.6_arm.ipk /tmp/filebot/
+sudo mv filebot_4.6.1_noarch.ipk /tmp/filebot/
 cd /tmp/filebot 
-sudo ar -x filebot_4.5.6_arm.ipk
+sudo ar -x filebot_4.6.1_noarch.ipk
 sudo tar zxvf data.tar.gz
 sudo cp -r opt/share/* /usr/share/
 sudo ln -s /usr/share/filebot/bin/filebot.sh /usr/bin/filebot
