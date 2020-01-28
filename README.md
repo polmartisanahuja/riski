@@ -40,11 +40,11 @@ Other hardware components needed are: a SD card (standard or micro depending on 
     - raspberry login: pi
     - Password: raspberry 
  
- Once the command line prompt $ appears, type:
+    Once the command line prompt $ appears, type:
     ```sh
     $ git clone https://github.com/polstein/riski
     $ sh riski/riski.sh
-```
+    ```
 
  *Alternatively, step 5 can be done remotely using a shh client such as putty in Windows or Terminal in Mac Os or Linux. For example, in Terminal, just type _ssh pi@RPi_private_ip_ (_RPi_private_ip_ is shown in the _address_ field when typing _ifconfig_ on the RPi prompt) and then, introduce the same password and commands on the code-box above. The advantage of this procedure is that you can copy paste some long input parameters using cursor.
 
