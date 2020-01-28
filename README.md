@@ -46,9 +46,9 @@ Other hardware components needed are: a SD card (standard or micro depending on 
     $ sh riski/riski.sh
     ```
 
- *Alternatively, step 5 can be done remotely using a shh client such as putty in Windows or Terminal in Mac Os or Linux. For example, in Terminal, just type _ssh pi@RPi_private_ip_ (_RPi_private_ip_ is shown in the _address_ field when typing _ifconfig_ on the RPi prompt) and then, introduce the same password and commands on the code-box above. The advantage of this procedure is that you can copy paste some long input parameters using cursor.
+ *Alternatively, step 5 can be done remotely using a shh client such as putty in Windows or Terminal in Mac Os or Linux. For example, in Terminal, just type _ssh pi@RPi_private_ip_ (_RPi_private_ip_ is shown in the _address_ field when typing _ifconfig_ on the RPi prompt) and then, introduce the same password and commands on the code-box above. The advantage of this procedure is that you can copy paste some long input parameters using cursor.*
 
-    The Riski installation will start and some input parameters must be provided during the installation:
+   The Riski installation will start and some input parameters must be provided during the installation:
  - Type a private IP address for your RPi. The three first numbers separated by dots must be exactly the same as the ones displayed in the eth>inet addr field, the last one can be substituted by convenience for an unused IP, as for example 12 (e.g. 192.168.1.12)
  - Copy the Mask, Destination, Bcast and Gateway values as they are displayed (e.g. Mask:255.255.255.0 Destination:192.168.1.0 Bcast:192.168.1.255 Gateway:192.168.1.1)
  - Enter OpenSubtitles username and password of step 3
